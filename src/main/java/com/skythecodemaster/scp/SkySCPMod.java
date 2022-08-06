@@ -18,9 +18,10 @@ import org.slf4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("skysscp")
+@Mod(SkySCPMod.MOD_ID)
 public class SkySCPMod
 {
+    public static final String MOD_ID = "skyscp";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -54,8 +55,8 @@ public class SkySCPMod
     {
         // Some example code to receive and process InterModComms from other mods
         LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m->m.messageSupplier().get()).
-                collect(Collectors.toList()));
+          map(m->m.messageSupplier().get()).
+          collect(Collectors.toList()));
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
