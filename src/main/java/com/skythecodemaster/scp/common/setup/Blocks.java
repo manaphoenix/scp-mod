@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 public class Blocks {
   static void register(){};
   
-  public static final RegistryObject<Block> GENERIC_BLOCK = register("generic_block",() -> GenericBlock::new, () -> new BaseBlockItem(Blocks.GENERIC_BLOCK.get()));
+  public static final RegistryObject<Block> GENERIC_BLOCK = register("generic_block",() -> new GenericBlock(), () -> new BaseBlockItem(Blocks.GENERIC_BLOCK.get()));
   
   private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block) {
     return Registration.BLOCKS.register(name,block);
