@@ -1,6 +1,8 @@
 package com.skythecodemaster.scp;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,43 +23,26 @@ import java.util.stream.Collectors;
 @Mod(SkySCPMod.MOD_ID)
 public class SkySCPMod
 {
-    public static final String MOD_ID = "skyscp";
+    public static final String MOD_ID = "skysscp";
+    public static final CreativeModeTab TAB = new CreativeModeTab("skysscptab") {
+        @Override
+        public ItemStack makeIcon() {
+            return null;
+        }
+    };
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public SkySCPMod()
     {
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        LOGGER.info("SCP: Secure, Contain, Protect");
+        
+        
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-    }
-
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
-        // Some example code to dispatch IMC to another mod
-        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
-    }
-
-    private void processIMC(final InterModProcessEvent event)
-    {
-        // Some example code to receive and process InterModComms from other mods
-        LOGGER.info("Got IMC {}", event.getIMCStream().
-          map(m->m.messageSupplier().get()).
-          collect(Collectors.toList()));
-    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
