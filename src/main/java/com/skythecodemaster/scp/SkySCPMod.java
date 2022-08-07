@@ -1,6 +1,7 @@
 package com.skythecodemaster.scp;
 
 import com.mojang.logging.LogUtils;
+import com.skythecodemaster.scp.common.setup.Blocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -22,7 +23,7 @@ public class SkySCPMod
     public static final CreativeModeTab TAB = new CreativeModeTab("skysscptab") {
         @Override
         public ItemStack makeIcon() {
-            return null;
+            return new ItemStack(Blocks.GENERIC_BLOCK.get());
         }
     };
     // Directly reference a slf4j logger

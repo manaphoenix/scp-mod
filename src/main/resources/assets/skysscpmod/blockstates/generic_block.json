@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "skysscp:block/generic_block"
+    }
+  }
+}
