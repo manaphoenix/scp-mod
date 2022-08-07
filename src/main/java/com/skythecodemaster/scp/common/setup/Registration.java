@@ -22,7 +22,6 @@ public class Registration {
     ITEMS.register(modEventBus);
     
     Blocks.register();
-    Items.register();
   }
 
 }
