@@ -1,4 +1,9 @@
 {
   "block.skysscp.generic_block": "Generic Block",
+  "block.skysscp.door_light_old": "Light Containment Door (Old)",
+  "block.skysscp.door_light_new": "Light Containment Door (New)",
+  "block.skysscp.door_heavy": "Heavy Containment Door",
+  "block.skysscp.door_entrance": "Entrance Zone Door",
+  "block.skysscp.door_gate": "Heavy Gate",
   "itemGroup.skysscptab": "Sky's SCPs"
 }

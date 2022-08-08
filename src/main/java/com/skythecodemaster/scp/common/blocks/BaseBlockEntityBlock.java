@@ -1,49 +1,37 @@
 package com.skythecodemaster.scp.common.blocks;
 
+import com.skythecodemaster.scp.common.setup.BlockEntityTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class BaseBlock extends Block {
-  private final TagKey<Block> harvestTag;
+public class BaseBlockEntityBlock extends BaseEntityBlock {
   
-  public BaseBlock() {
-    this(BlockTags.NEEDS_IRON_TOOL);
+  public BaseBlockEntityBlock(Properties properties) {
+    super(properties);
   }
   
-  public BaseBlock(TagKey<Block> harvestTag) {
+  public BaseBlockEntityBlock() {
     this(
       Properties.of(Material.HEAVY_METAL)
         .strength( 1,5)
         .sound(SoundType.METAL)
         .noOcclusion()
-        .requiresCorrectToolForDrops(),
-      harvestTag
+        .requiresCorrectToolForDrops()
     );
   }
-  
-  public BaseBlock(Properties properties) {
-    this(
-      properties,
-      BlockTags.NEEDS_IRON_TOOL
-    );
-  }
-  
-  public BaseBlock(Properties properties, TagKey<Block> harvestTag) {
-    super(properties);
-    this.harvestTag = harvestTag;
-  }
-  
   @NotNull
   @Override
   public InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
@@ -51,7 +39,9 @@ public class BaseBlock extends Block {
     return InteractionResult.SUCCESS;
   }
   
-  public TagKey<Block> getHarvestTag() {
-    return harvestTag;
+  @Nullable
+  @Override
+  public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
+    return null;
   }
 }
