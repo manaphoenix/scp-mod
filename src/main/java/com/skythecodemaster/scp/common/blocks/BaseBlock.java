@@ -44,13 +44,6 @@ public class BaseBlock extends Block {
     this.harvestTag = harvestTag;
   }
   
-  @NotNull
-  @Override
-  public InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-    
-    return InteractionResult.SUCCESS;
-  }
-  
   public TagKey<Block> getHarvestTag() {
     return harvestTag;
   }

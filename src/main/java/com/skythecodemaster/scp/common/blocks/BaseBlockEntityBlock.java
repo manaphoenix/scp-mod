@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,8 +18,7 @@ import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class BaseBlockEntityBlock extends BaseEntityBlock {
-  
+public class BaseBlockEntityBlock extends BaseEntityBlock implements EntityBlock {
   public BaseBlockEntityBlock(Properties properties) {
     super(properties);
   }
@@ -41,7 +41,7 @@ public class BaseBlockEntityBlock extends BaseEntityBlock {
   
   @Nullable
   @Override
-  public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
+  public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
     return null;
   }
 }
