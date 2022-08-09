@@ -7,7 +7,7 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 abstract class LightDoorOldModel extends AnimatedGeoModel<LightDoorOldItem> {
   public ResourceLocation getModelLocation(com.skythecodemaster.scp.common.models.LightDoorOldModel object) {
-    return new ResourceLocation(SkySCPMod.MOD_ID,"geo/SCPLightDoorOld.geo.json");
+    return new ResourceLocation(SkySCPMod.MOD_ID,"geo/scp_light_door_old.geo.json");
   }
   
   public ResourceLocation getTextureLocation(com.skythecodemaster.scp.common.models.LightDoorOldModel object) {
