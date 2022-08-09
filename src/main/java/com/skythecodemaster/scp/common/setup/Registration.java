@@ -13,10 +13,11 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static com.skythecodemaster.scp.common.setup.BlockEntityTypes.TILE_ENTITIES;
+
 public class Registration {
   public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SkySCPMod.MOD_ID);
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SkySCPMod.MOD_ID);
-  public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, SkySCPMod.MOD_ID);
   
   public static void register() {
     IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
