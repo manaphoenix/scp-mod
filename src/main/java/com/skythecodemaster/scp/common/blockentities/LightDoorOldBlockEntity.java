@@ -1,6 +1,7 @@
 package com.skythecodemaster.scp.common.blockentities;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -23,6 +24,7 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
     event.getController().setAnimation(new AnimationBuilder().addAnimation("LDO.anim.open"));
     return PlayState.CONTINUE;
   }
+  
   @Override
   public void registerControllers(AnimationData data) {
     data.addAnimationController(new AnimationController<LightDoorOldBlockEntity>(this,"controller",0,this::predicate));
