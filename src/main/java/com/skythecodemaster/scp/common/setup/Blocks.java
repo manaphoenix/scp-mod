@@ -6,7 +6,6 @@ import com.skythecodemaster.scp.common.items.LightDoorOldItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
-import com.skythecodemaster.scp.common.setup.Registration;
 import com.skythecodemaster.scp.common.items.BaseBlockItem;
 
 import java.util.function.Supplier;

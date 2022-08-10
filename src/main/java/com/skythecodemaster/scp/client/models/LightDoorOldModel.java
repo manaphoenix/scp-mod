@@ -2,8 +2,6 @@ package com.skythecodemaster.scp.client.models;
 
 import com.skythecodemaster.scp.SkySCPMod;
 import com.skythecodemaster.scp.common.blockentities.LightDoorOldBlockEntity;
-import com.skythecodemaster.scp.common.blocks.LightDoorOld;
-import com.skythecodemaster.scp.common.items.LightDoorOldItem;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
