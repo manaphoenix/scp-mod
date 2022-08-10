@@ -15,7 +15,7 @@ public class LightDoorOldModel extends AnimatedGeoModel<LightDoorOldBlockEntity>
   
   @Override
   public ResourceLocation getTextureLocation(LightDoorOldBlockEntity object) {
-    return new ResourceLocation(SkySCPMod.MOD_ID,"textures/scp_light_door_old.png");
+    return new ResourceLocation(SkySCPMod.MOD_ID,"textures/block/scp_light_door_old.png");
   }
   
   @Override

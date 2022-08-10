@@ -1,9 +1,11 @@
 package com.skythecodemaster.scp.common.blockentities;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -27,11 +29,13 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
   
   @Override
   public void registerControllers(AnimationData data) {
-    data.addAnimationController(new AnimationController<LightDoorOldBlockEntity>(this,"controller",0,this::predicate));
+    data.addAnimationController(new AnimationController<LightDoorOldBlockEntity>(this,"controller",60,this::predicate));
   }
   
   @Override
   public AnimationFactory getFactory() {
     return this.factory;
   }
+  
+
 }
