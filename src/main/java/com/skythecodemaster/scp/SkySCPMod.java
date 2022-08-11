@@ -2,39 +2,48 @@ package com.skythecodemaster.scp;
 
 import com.mojang.logging.LogUtils;
 import com.skythecodemaster.scp.client.renderers.LightDoorOldRenderer;
-import com.skythecodemaster.scp.common.setup.BlockEntityTypes;
-import com.skythecodemaster.scp.common.setup.Blocks;
+import com.skythecodemaster.scp.common.registry.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import com.skythecodemaster.scp.common.setup.Registration;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
+import com.skythecodemaster.scp.common.registry.BlockRegistry;
+import com.skythecodemaster.scp.common.registry.TileRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SkySCPMod.MOD_ID)
 public class SkySCPMod
 {
+    public static boolean DISABLE_IN_DEV = false;
     public static final String MOD_ID = "skysscp";
-    public static final CreativeModeTab TAB = new CreativeModeTab("skysscptab") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(Blocks.GENERIC_BLOCK.get());
-        }
-    };
+    public static CreativeModeTab scpTab;
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public SkySCPMod()
     {
         LOGGER.info("SCP: Secure, Contain, Protect");
-        
-        Registration.register();
+        if (!FMLEnvironment.production && !DISABLE_IN_DEV) {
+            IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+            TileRegistry.TILES.register(bus);
+            BlockRegistry.BLOCKS.register(bus);
+            ItemRegistry.ITEMS.register(bus);
+            scpTab = new CreativeModeTab(CreativeModeTab.getGroupCountSafe(), "skysscptab") {
+                @Override
+                public ItemStack makeIcon() {
+                    return new ItemStack(BlockRegistry.GENERIC_BLOCK.get());
+                }
+            };
+        }
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -62,7 +71,7 @@ public class SkySCPMod
         }
         @SubscribeEvent
         public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-            event.registerBlockEntityRenderer(BlockEntityTypes.LIGHT_DOOR_OLD_TILE.get(), LightDoorOldRenderer::new);
+            event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_ENTITY.get(), LightDoorOldRenderer::new);
         }
     }
 }
