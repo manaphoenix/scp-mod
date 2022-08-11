@@ -24,9 +24,11 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
     // check if block is powered
     BlockEntity block = event.getAnimatable();
     if (block.getBlockState().getValue(LightDoorOld.POWERED)) {
-      event.getController().setAnimation(new AnimationBuilder().addAnimation("LDO.anim.open", false));
+      event.getController().setAnimation(new AnimationBuilder().addAnimation("ldo.anim.open", false));
+      event.getController().setAnimation(new AnimationBuilder().addAnimation("ldo.anim.idle_open", false));
     } else {
-      event.getController().setAnimation(new AnimationBuilder().addAnimation("LDO.anim.close", false));
+      event.getController().setAnimation(new AnimationBuilder().addAnimation("ldo.anim.close", false));
+      event.getController().setAnimation(new AnimationBuilder().addAnimation("ldo.anim.idle_close", false));
     }
 
     return PlayState.CONTINUE;
@@ -38,7 +40,7 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
   
   @Override
   public void registerControllers(AnimationData data) {
-    data.addAnimationController(new AnimationController(this,"controller",60,this::predicate));
+    data.addAnimationController(new AnimationController(this,"controller",0,this::predicate));
   }
   
   @Override
