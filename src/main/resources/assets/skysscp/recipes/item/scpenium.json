@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafted_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_block"
+    }
+  ],
+  "result": {
+    "item": "skysscp:scpenium",
+    "count": 10
+  }
+}
