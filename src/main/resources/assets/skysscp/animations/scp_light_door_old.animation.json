@@ -3,7 +3,7 @@
 	"animations": {
 		"ldo.anim.open": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.08333,
+			"animation_length": 0.5,
 			"override_previous_animation": true,
 			"bones": {
 				"bone": {
@@ -11,7 +11,7 @@
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"0.0833": {
+						"0.5": {
 							"vector": [16, 0, 0]
 						}
 					}
@@ -21,7 +21,7 @@
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"0.0833": {
+						"0.5": {
 							"vector": [-16, 0, 0]
 						}
 					}
@@ -30,14 +30,14 @@
 		},
 		"ldo.anim.close": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.08333,
+			"animation_length": 0.5,
 			"bones": {
 				"bone": {
 					"position": {
 						"0.0": {
 							"vector": [16, 0, 0]
 						},
-						"0.0833": {
+						"0.5": {
 							"vector": [0, 0, 0]
 						}
 					}
@@ -47,7 +47,7 @@
 						"0.0": {
 							"vector": [-16, 0, 0]
 						},
-						"0.0833": {
+						"0.5": {
 							"vector": [0, 0, 0]
 						}
 					}
