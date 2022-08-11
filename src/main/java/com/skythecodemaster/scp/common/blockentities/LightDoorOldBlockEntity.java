@@ -31,7 +31,8 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
   public LightDoorOldBlockEntity(BlockPos pos, BlockState state) {
     super(TileRegistry.LIGHT_DOOR_ENTITY.get(),pos,state);
   }
-  
+
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   @Override
   public void registerControllers(AnimationData data) {
     data.addAnimationController(new AnimationController(this,"controller",60,this::predicate));
