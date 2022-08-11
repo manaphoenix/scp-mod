@@ -46,15 +46,4 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
   public AnimationFactory getFactory() {
     return this.factory;
   }
-  
-  public void tick(Level level, BlockPos pos, BlockState state, LightDoorOld door) {
-    if (level.hasNeighborSignal(pos) || level.hasNeighborSignal(pos.above())) {
-      door.state = true;
-    } else {
-      door.state = false;
-    }
-    if (door.state != door.lastState) {
-      door.doState();
-    }
-  }
 }
