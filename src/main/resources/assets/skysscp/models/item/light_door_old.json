@@ -1,3 +1,6 @@
 {
-  "parent":"skysscp:block/light_door_old"
+  "parent":"item/generated",
+  "textures": {
+    "layer0": "skysscp:item/light_door_old"
+  }
 }

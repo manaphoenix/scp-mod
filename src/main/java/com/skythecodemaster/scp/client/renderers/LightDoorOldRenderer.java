@@ -14,7 +14,7 @@ public class LightDoorOldRenderer extends GeoBlockRenderer<LightDoorOldBlockEnti
   public LightDoorOldRenderer(BlockEntityRendererProvider.Context rendererDispatcherIn) {
     super(rendererDispatcherIn, new LightDoorOldModel());
   }
-
+  
   @Override
   public RenderType getRenderType(LightDoorOldBlockEntity animatable, float partialTicks, PoseStack stack,
                                   MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,

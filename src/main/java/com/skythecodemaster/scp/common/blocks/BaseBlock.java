@@ -16,7 +16,7 @@ public class BaseBlock extends Block {
   public BaseBlock(TagKey<Block> harvestTag) {
     this(
       Properties.of(Material.HEAVY_METAL)
-        .strength( 1,5)
+        .strength(1, 5)
         .sound(SoundType.METAL)
         .noOcclusion()
         .requiresCorrectToolForDrops(),

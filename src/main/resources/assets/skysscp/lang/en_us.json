@@ -5,5 +5,6 @@
   "block.skysscp.heavy_door": "Heavy Containment Door",
   "block.skysscp.entrance_door": "Entrance Zone Door",
   "block.skysscp.heavy_gate": "Heavy Gate",
-  "itemGroup.skysscptab": "Sky's SCPs"
+  "itemGroup.skysscptab": "Sky's SCPs",
+  "item.skysscp.scpenium": "SCPenium"
 }
