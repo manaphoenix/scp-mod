@@ -23,26 +23,26 @@ import org.jetbrains.annotations.Nullable;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LightDoorOld extends DirectionalBlock implements EntityBlock {
-
+  
   public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
   public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
-
-  private static final VoxelShape SHAPE_NORTH = Shapes.box(0,0,0.375f,1,2,0.625f);
+  
+  private static final VoxelShape SHAPE_NORTH = Shapes.box(0, 0, 0.375f, 1, 2, 0.625f);
   private static final VoxelShape SHAPE_SOUTH = SHAPE_NORTH;
-  private static final VoxelShape SHAPE_EAST = Shapes.box(0.375f,0,0,0.625f,2,1);
+  private static final VoxelShape SHAPE_EAST = Shapes.box(0.375f, 0, 0, 0.625f, 2, 1);
   private static final VoxelShape SHAPE_WEST = SHAPE_EAST;
   
   public LightDoorOld() {
     super(Properties.of(Material.STONE).noOcclusion());
     this.stateDefinition.any().setValue(OPEN, false).setValue(POWERED, false);
   }
-
+  
   @Nullable
   @Override
   public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    return TileRegistry.LIGHT_DOOR_ENTITY.get().create(pos,state);
+    return TileRegistry.LIGHT_DOOR_ENTITY.get().create(pos, state);
   }
-
+  
   @Override
   public RenderShape getRenderShape(BlockState state) {
     return RenderShape.ENTITYBLOCK_ANIMATED;
@@ -53,22 +53,22 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
   public BlockState getStateForPlacement(BlockPlaceContext context) {
     return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
   }
-
+  
   protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
     builder.add(FACING, OPEN, POWERED);
   }
-
+  
   @Override
   public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos posOf, boolean something) {
     boolean flag = world.hasNeighborSignal(pos) || world.hasNeighborSignal(pos.above());
-
+    
     world.setBlock(pos, state.setValue(POWERED, flag).setValue(OPEN, flag), 2);
   }
-
+  
   @Override
   public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pPos, CollisionContext context) {
     if (state.getValue(OPEN)) {
-      return Shapes.box(0,0,0,0,0,0);
+      return Shapes.box(0, 0, 0, 0, 0, 0);
     } else {
       return switch (state.getValue(BlockStateProperties.FACING)) {
         case NORTH, DOWN, UP -> SHAPE_NORTH;
