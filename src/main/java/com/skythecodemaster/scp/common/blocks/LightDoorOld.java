@@ -1,20 +1,15 @@
 package com.skythecodemaster.scp.common.blocks;
 
-import com.mojang.logging.LogUtils;
-import com.skythecodemaster.scp.common.blockentities.LightDoorOldBlockEntity;
 import com.skythecodemaster.scp.common.registry.TileRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -24,9 +19,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.fml.common.Mod;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.slf4j.Logger;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LightDoorOld extends DirectionalBlock implements EntityBlock {
@@ -63,6 +56,13 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
 
   protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
     builder.add(FACING, OPEN, POWERED);
+  }
+
+  @Override
+  public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos posOf, boolean something) {
+    boolean flag = world.hasNeighborSignal(pos) || world.hasNeighborSignal(pos.above());
+
+    world.setBlock(pos, state.setValue(POWERED, flag).setValue(OPEN, flag), 2);
   }
 
   @Override
