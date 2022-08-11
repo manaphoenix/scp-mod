@@ -1,10 +1,8 @@
 package com.skythecodemaster.scp.common.registry;
 
 import com.skythecodemaster.scp.SkySCPMod;
-import com.skythecodemaster.scp.common.blockentities.LightDoorOldBlockEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
