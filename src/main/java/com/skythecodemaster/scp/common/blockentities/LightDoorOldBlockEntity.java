@@ -2,16 +2,11 @@ package com.skythecodemaster.scp.common.blockentities;
 
 import com.mojang.logging.LogUtils;
 import com.skythecodemaster.scp.common.blocks.LightDoorOld;
+import com.skythecodemaster.scp.common.registry.TileRegistry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.slf4j.Logger;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -21,16 +16,10 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-import static com.skythecodemaster.scp.common.setup.BlockEntityTypes.LIGHT_DOOR_OLD_TILE;
-
 public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable {
   private static final Logger LOGGER = LogUtils.getLogger(); // Collect a logger
-  
-  public LightDoorOldBlockEntity(BlockPos pos, BlockState state) {
-    super(LIGHT_DOOR_OLD_TILE.get(),pos,state);
-  }
+  private final AnimationFactory factory = new AnimationFactory(this);
 
-  private AnimationFactory factory = new AnimationFactory(this);
   private <E extends BlockEntity & IAnimatable> PlayState predicate(AnimationEvent<E> event) {
     // check if block is powered
     BlockEntity block = event.getAnimatable();
@@ -43,10 +32,14 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
 
     return PlayState.CONTINUE;
   }
+
+  public LightDoorOldBlockEntity(BlockPos pos, BlockState state) {
+    super(TileRegistry.LIGHT_DOOR_ENTITY.get(),pos,state);
+  }
   
   @Override
   public void registerControllers(AnimationData data) {
-    data.addAnimationController(new AnimationController<LightDoorOldBlockEntity>(this,"controller",60,this::predicate));
+    data.addAnimationController(new AnimationController(this,"controller",60,this::predicate));
   }
   
   @Override

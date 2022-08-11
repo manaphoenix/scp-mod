@@ -6,9 +6,9 @@ import net.minecraft.world.level.block.Block;
 
 public class LightDoorOldItem extends BlockItem {
   public LightDoorOldItem(Block block, Properties properties) {
-    super(block,properties.tab(SkySCPMod.TAB));
+    super(block,properties.tab(SkySCPMod.scpTab));
   }
   public LightDoorOldItem(Block block) {
-    super(block,new Properties().tab(SkySCPMod.TAB));
+    super(block,new Properties().tab(SkySCPMod.scpTab));
   }
 }

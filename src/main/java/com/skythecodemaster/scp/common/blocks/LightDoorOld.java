@@ -2,12 +2,15 @@ package com.skythecodemaster.scp.common.blocks;
 
 import com.mojang.logging.LogUtils;
 import com.skythecodemaster.scp.common.blockentities.LightDoorOldBlockEntity;
-import com.skythecodemaster.scp.common.setup.BlockEntityTypes;
+import com.skythecodemaster.scp.common.registry.TileRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -19,16 +22,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.fml.common.Mod;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LightDoorOld extends DirectionalBlock implements EntityBlock {
@@ -46,9 +41,11 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
   public LightDoorOld() {
     super(Properties.of(Material.STONE).noOcclusion());
   }
-  
+
+  @Nullable
+  @Override
   public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    return BlockEntityTypes.LIGHT_DOOR_OLD_TILE.get().create(pos,state);
+    return TileRegistry.LIGHT_DOOR_ENTITY.get().create(pos,state);
   }
   
   public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
@@ -60,16 +57,11 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
     return null;
     //return type == BlockEntityTypes.LIGHT_DOOR_OLD_TILE.get() ? LightDoorOldBlockEntity::tick : null;
   }
+
   @Override
-  public @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
+  public RenderShape getRenderShape(BlockState state) {
     return RenderShape.ENTITYBLOCK_ANIMATED;
   }
-  
-  //private AnimationFactory factory = new AnimationFactory(this);
-  //private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-  //  event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.skysscp.scp_light_door_old"));
-  //  return PlayState.CONTINUE;
-  //}
   
   // Called every tick, might move state change to BE? too lazy.
   public void doState() {
@@ -79,26 +71,15 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
     }
   }
   
-  //@Override
-  //public void registerControllers(AnimationData data) {
-  //  data.addAnimationController(new AnimationController<LightDoorOld>(this,"controller",0,this::predicate));
-  //}
-  //
-  //@Override
-  //public AnimationFactory getFactory() {
-  //  return this.factory;
-  //}
-  
   @Nullable
   @Override
   public BlockState getStateForPlacement(BlockPlaceContext context) {
     return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
     //return this.defaultBlockState().setValue(BlockStateProperties.FACING, context.getNearestLookingDirection().getOpposite());
   }
-  
-  @Override
+
   protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-    builder.add(BlockStateProperties.FACING);
+    builder.add(FACING);
   }
   
   @Override
