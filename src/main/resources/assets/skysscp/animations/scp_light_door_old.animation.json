@@ -1,57 +1,76 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"LDO.anim.open": {
+		"ldo.anim.open": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.25,
+			"animation_length": 0.08333,
+			"override_previous_animation": true,
 			"bones": {
-				"bone2": {
-					"position": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [-16, 0, 0]
-						}
-					}
-				},
 				"bone": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"0.25": {
+						"0.0833": {
 							"vector": [16, 0, 0]
+						}
+					}
+				},
+				"bone2": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [-16, 0, 0]
 						}
 					}
 				}
 			}
 		},
-		"LDO.anim.close": {
+		"ldo.anim.close": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.41667,
+			"animation_length": 0.08333,
 			"bones": {
-				"bone2": {
-					"position": {
-						"0.0": {
-							"vector": [-16, 0, 0]
-						},
-						"0.25": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
 				"bone": {
 					"position": {
 						"0.0": {
 							"vector": [16, 0, 0]
 						},
-						"0.25": {
+						"0.0833": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"bone2": {
+					"position": {
+						"0.0": {
+							"vector": [-16, 0, 0]
+						},
+						"0.0833": {
 							"vector": [0, 0, 0]
 						}
 					}
 				}
 			}
+		},
+		"ldo.anim.idle_open": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"bone": {
+					"position": {
+						"vector": [-16, 0, 0]
+					}
+				},
+				"bone2": {
+					"position": {
+						"vector": [16, 0, 0]
+					}
+				}
+			}
+		},
+		"ldo.anim.idle_close": {
+			"loop": "hold_on_last_frame"
 		}
 	},
 	"geckolib_format_version": 2
