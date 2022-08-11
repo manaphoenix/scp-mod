@@ -23,8 +23,7 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
   private <E extends BlockEntity & IAnimatable> PlayState predicate(AnimationEvent<E> event) {
     // check if block is powered
     BlockEntity block = event.getAnimatable();
-    boolean powered = block.getLevel().hasNeighborSignal(block.getBlockPos()) || block.getLevel().hasNeighborSignal(block.getBlockPos().above());
-    if (powered) {
+    if (block.getBlockState().getValue(LightDoorOld.POWERED)) {
       event.getController().setAnimation(new AnimationBuilder().addAnimation("LDO.anim.open", false));
     } else {
       event.getController().setAnimation(new AnimationBuilder().addAnimation("LDO.anim.close", false));
