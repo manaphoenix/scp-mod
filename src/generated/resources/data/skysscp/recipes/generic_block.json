@@ -1,20 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "skysscp",
   "pattern": [
-    "ii",
-    "si",
-    "ii"
+    "sss",
+    "sss",
+    "sss"
   ],
   "key": {
-    "i": {
-      "tag": "forge:ingots/iron"
-    },
     "s": {
       "item": "skysscp:scpenium"
     }
   },
   "result": {
-    "item": "skysscp:light_door_old"
+    "item": "skysscp:generic_block"
   }
 }

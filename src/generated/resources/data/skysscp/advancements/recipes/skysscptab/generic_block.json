@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "skysscp:scpenium"
+      "skysscp:generic_block"
     ]
   },
   "criteria": {
@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:ingots/iron"
+            "items": [
+              "skysscp:scpenium"
+            ]
           }
         ]
       }
@@ -19,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "skysscp:scpenium"
+        "recipe": "skysscp:generic_block"
       }
     }
   },

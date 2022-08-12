@@ -1,4 +1,6 @@
+0879b9e07c25799217c1f202216765a9051aede3 data/skysscp/advancements/recipes/skysscptab/generic_block.json
 19b1a5e82bc161d75c2be6171ec6bf1a4840110c data/skysscp/advancements/recipes/skysscptab/light_door_old.json
-d54c9d39f00f36350bbd6258b6deeedc98d8bb66 data/skysscp/advancements/recipes/skysscptab/scpenium.json
-aac756fbe4ff5d34b7becf9e8e48c208af58ea1b data/skysscp/recipes/light_door_old.json
+8c8854ff83acd2fe40a8efc328d65343bbeee3ec data/skysscp/advancements/recipes/skysscptab/scpenium.json
+f79062ec9c452c75c904861de1c04f982bf69517 data/skysscp/recipes/generic_block.json
+30206b9c7b6bc6a5e52dcd01454ef3cd92b15b8c data/skysscp/recipes/light_door_old.json
 296e84b592b540664a0c9dbabe3154f9241e4285 data/skysscp/recipes/scpenium.json
