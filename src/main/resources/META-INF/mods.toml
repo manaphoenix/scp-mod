@@ -9,7 +9,7 @@ modLoader="javafml" #mandatory
 loaderVersion="[40,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="All rights reserved"
+license="MIT"
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -29,7 +29,7 @@ displayName="Sky's SCP Mod" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="" #optional
 # A text field displayed in the mod UI
-#credits="" #optional
+credits="ManaPhoenix - Without them this mod wouldn't be possible." #optional
 # A text field displayed in the mod UI
 authors="SkyTheCodeMaster" #optional
 # The description text for the mod (multi line!) (#mandatory)
@@ -38,7 +38,7 @@ This is a mod that simply adds various SCP blocks to help make SCP Foundation si
 Don't expect any good things.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
+[[dependencies.skysscp]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -50,7 +50,7 @@ Don't expect any good things.
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.skysscp]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
