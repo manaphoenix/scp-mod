@@ -27,9 +27,9 @@ public class Recipes extends RecipeProvider {
     
     // Add old door recipe
     ShapedRecipeBuilder.shaped(BlockRegistry.LIGHT_DOOR_OLD.get())
-      .pattern("ii ")
-      .pattern("si ")
-      .pattern("ii ")
+      .pattern("ii")
+      .pattern("si")
+      .pattern("ii")
       .define('i', Tags.Items.INGOTS_IRON)
       .define('s', ItemRegistry.SCPENIUM.get())
       .group("skysscp")
