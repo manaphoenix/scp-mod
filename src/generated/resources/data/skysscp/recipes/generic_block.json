@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "skysscp:scpenium"
+    }
+  },
+  "result": {
+    "item": "skysscp:generic_block"
+  }
+}

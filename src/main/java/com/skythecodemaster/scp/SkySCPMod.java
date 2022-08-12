@@ -38,7 +38,7 @@ public class SkySCPMod {
       scpTab = new CreativeModeTab(CreativeModeTab.getGroupCountSafe(), "skysscptab") {
         @Override
         public ItemStack makeIcon() {
-          return new ItemStack(BlockRegistry.GENERIC_BLOCK.get());
+          return new ItemStack(BlockRegistry.SCPENIUM_BLOCK.get());
         }
       };
     }

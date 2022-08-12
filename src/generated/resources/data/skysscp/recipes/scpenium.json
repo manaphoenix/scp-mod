@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "skysscp",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "tag": "forge:storage_blocks/iron"
+    }
+  ],
+  "result": {
+    "item": "skysscp:scpenium",
+    "count": 10
+  }
+}

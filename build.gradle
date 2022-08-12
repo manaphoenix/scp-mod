@@ -48,6 +48,9 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            args '--mod', 'skysscp', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
             // Recommended logging data for a userdev environment
             // The markers can be added/remove as needed separated by commas.
             // "SCAN": For mods scan.
