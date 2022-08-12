@@ -56,26 +56,15 @@
 		},
 		"ldo.anim.idle_open": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 0.5,
 			"bones": {
 				"bone": {
 					"position": {
-						"0.0": {
-							"vector": [-16, 0, 0]
-						},
-						"0.5": {
-							"vector": [16, 0, 0]
-						}
+						"vector": [16, 0, 0]
 					}
 				},
 				"bone2": {
 					"position": {
-						"0.0": {
-							"vector": [16, 0, 0]
-						},
-						"0.5": {
-							"vector": [-16, 0, 0]
-						}
+						"vector": [-16, 0, 0]
 					}
 				}
 			}
