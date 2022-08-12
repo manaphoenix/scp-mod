@@ -1,15 +1,12 @@
 package com.skythecodemaster.scp.common.registry;
 
 import com.skythecodemaster.scp.SkySCPMod;
-import com.skythecodemaster.scp.common.blockentities.LightDoorOldBlockEntity;
 import com.skythecodemaster.scp.common.items.ScpeniumItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 
 public class ItemRegistry {
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SkySCPMod.MOD_ID);

@@ -2,22 +2,24 @@ package com.skythecodemaster.scp;
 
 import com.mojang.logging.LogUtils;
 import com.skythecodemaster.scp.client.renderers.LightDoorOldRenderer;
+import com.skythecodemaster.scp.common.datagen.DataGenerators;
+import com.skythecodemaster.scp.common.registry.BlockRegistry;
 import com.skythecodemaster.scp.common.registry.ItemRegistry;
+import com.skythecodemaster.scp.common.registry.TileRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
-import com.skythecodemaster.scp.common.registry.BlockRegistry;
-import com.skythecodemaster.scp.common.registry.TileRegistry;
+import software.bernie.shadowed.eliotlash.mclib.math.functions.limit.Min;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SkySCPMod.MOD_ID)
@@ -42,7 +44,7 @@ public class SkySCPMod {
         }
       };
     }
-    
+
     // Register ourselves for server and other game events we are interested in
     MinecraftForge.EVENT_BUS.register(this);
   }
