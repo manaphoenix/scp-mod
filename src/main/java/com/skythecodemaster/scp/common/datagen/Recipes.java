@@ -48,5 +48,7 @@ public class Recipes extends RecipeProvider {
       .group("skysscp")
       .unlockedBy("has_item", has(SCPENIUM))
       .save(consumer);
+    
+    // Add new light door recipe
   }
 }

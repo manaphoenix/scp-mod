@@ -14,12 +14,22 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 public class ItemRegistry {
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SkySCPMod.MOD_ID);
   
-  public static final RegistryObject<BlockItem> SCPENIUM_BLOCK_ITEM = ITEMS.register("generic_block",
+  // SCPenium Block
+  public static final RegistryObject<BlockItem> SCPENIUM_BLOCK_ITEM = ITEMS.register("scpenium_block",
     () -> new BlockItem(BlockRegistry.SCPENIUM_BLOCK.get(),
       new Item.Properties().tab(SkySCPMod.scpTab)));
+  
+  // SCPenium item
+  public static final RegistryObject<Item> SCPENIUM = ITEMS.register("scpenium",
+    () -> new ScpeniumItem());
+  
+  // Light Door (Old)
   public static final RegistryObject<BlockItem> LIGHT_DOOR_OLD_ITEM = ITEMS.register("light_door_old",
     () -> new BlockItem(BlockRegistry.LIGHT_DOOR_OLD.get(),
       new Item.Properties().tab(SkySCPMod.scpTab)));
-  public static final RegistryObject<Item> SCPENIUM = ITEMS.register("scpenium",
-    () -> new ScpeniumItem());
+  
+  // Light Door (New)
+  public static final RegistryObject<BlockItem> LIGHT_DOOR_NEW_ITEM = ITEMS.register("light_door_new",
+    () -> new BlockItem(BlockRegistry.LIGHT_DOOR_NEW.get(),
+      new Item.Properties().tab(SkySCPMod.scpTab)));
 }
