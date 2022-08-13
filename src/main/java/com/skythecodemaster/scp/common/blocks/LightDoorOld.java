@@ -40,7 +40,7 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
   @Nullable
   @Override
   public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    return TileRegistry.LIGHT_DOOR_ENTITY.get().create(pos, state);
+    return TileRegistry.LIGHT_DOOR_OLD_ENTITY.get().create(pos, state);
   }
   
   @Override

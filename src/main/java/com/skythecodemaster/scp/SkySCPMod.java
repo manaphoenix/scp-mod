@@ -1,7 +1,7 @@
 package com.skythecodemaster.scp;
 
 import com.mojang.logging.LogUtils;
-import com.skythecodemaster.scp.client.renderers.LightDoorOldRenderer;
+import com.skythecodemaster.scp.client.renderers.*;
 import com.skythecodemaster.scp.common.registry.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -67,7 +67,8 @@ public class SkySCPMod {
     
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-      event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_ENTITY.get(), LightDoorOldRenderer::new);
+      event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_OLD_ENTITY.get(), LightDoorOldRenderer::new);
+      event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_NEW_ENTITY.get(), LightDoorNewRenderer::new);
     }
   }
 }

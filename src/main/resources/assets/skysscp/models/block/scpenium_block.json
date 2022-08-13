@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "skysscp:block/generic_block"
+    "all": "skysscp:block/scpenium_block"
   }
 }

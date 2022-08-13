@@ -32,7 +32,7 @@ public class LightDoorNewBlockEntity extends BlockEntity implements IAnimatable 
   }
   
   public LightDoorNewBlockEntity(BlockPos pos, BlockState state) {
-    super(TileRegistry.LIGHT_DOOR_ENTITY.get(), pos, state);
+    super(TileRegistry.LIGHT_DOOR_OLD_ENTITY.get(), pos, state);
   }
   
   @Override

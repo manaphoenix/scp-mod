@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class BlockRegistry {
   public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SkySCPMod.MOD_ID);
   
-  public static final RegistryObject<ScpeniumBlock> SCPENIUM_BLOCK = BLOCKS.register("generic_block",
+  public static final RegistryObject<ScpeniumBlock> SCPENIUM_BLOCK = BLOCKS.register("scpenium_block",
     ScpeniumBlock::new);
   public static final RegistryObject<LightDoorOld> LIGHT_DOOR_OLD = BLOCKS.register("light_door_old",
     LightDoorOld::new);

@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import com.skythecodemaster.scp.common.blocks.LightDoorOld;
 import com.skythecodemaster.scp.common.registry.TileRegistry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.slf4j.Logger;
@@ -33,7 +32,7 @@ public class LightDoorOldBlockEntity extends BlockEntity implements IAnimatable 
   }
   
   public LightDoorOldBlockEntity(BlockPos pos, BlockState state) {
-    super(TileRegistry.LIGHT_DOOR_ENTITY.get(), pos, state);
+    super(TileRegistry.LIGHT_DOOR_OLD_ENTITY.get(), pos, state);
   }
   
   @Override
