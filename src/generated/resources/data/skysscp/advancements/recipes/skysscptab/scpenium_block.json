@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "skysscp:generic_block"
+      "skysscp:scpenium_block"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "skysscp:generic_block"
+        "recipe": "skysscp:scpenium_block"
       }
     }
   },

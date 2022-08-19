@@ -1,0 +1,6 @@
+{
+  "parent":"item/generated",
+  "textures": {
+    "layer0": "skysscp:item/heavy_door_old"
+  }
+}

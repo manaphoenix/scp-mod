@@ -21,12 +21,17 @@ public class ItemRegistry {
     () -> new ScpeniumItem());
   
   // Light Door (Old)
-  public static final RegistryObject<BlockItem> LIGHT_DOOR_OLD_ITEM = ITEMS.register("light_door_old",
+  public static final RegistryObject<BlockItem> LIGHT_DOOR_OLD_ITEM = ITEMS.register("light_door",
     () -> new BlockItem(BlockRegistry.LIGHT_DOOR_OLD.get(),
       new Item.Properties().tab(SkySCPMod.scpTab)));
   
   // Light Door (New)
-  public static final RegistryObject<BlockItem> LIGHT_DOOR_NEW_ITEM = ITEMS.register("light_door_new",
-    () -> new BlockItem(BlockRegistry.LIGHT_DOOR_NEW.get(),
+  //public static final RegistryObject<BlockItem> LIGHT_DOOR_NEW_ITEM = ITEMS.register("light_door_new",
+  //  () -> new BlockItem(BlockRegistry.LIGHT_DOOR_NEW.get(),
+  //    new Item.Properties().tab(SkySCPMod.scpTab)));
+  
+  // Heavy Door (Old)
+  public static final RegistryObject<BlockItem> HEAVY_DOOR_OLD_ITEM = ITEMS.register("heavy_door_old",
+    () -> new BlockItem(BlockRegistry.HEAVY_DOOR_OLD.get(),
       new Item.Properties().tab(SkySCPMod.scpTab)));
 }

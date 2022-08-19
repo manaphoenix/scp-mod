@@ -1,25 +1,24 @@
 package com.skythecodemaster.scp;
 
 import com.mojang.logging.LogUtils;
-import com.skythecodemaster.scp.client.renderers.LightDoorOldRenderer;
-import com.skythecodemaster.scp.common.datagen.DataGenerators;
-import com.skythecodemaster.scp.common.registry.BlockRegistry;
+import com.skythecodemaster.scp.client.renderers.*;
 import com.skythecodemaster.scp.common.registry.ItemRegistry;
-import com.skythecodemaster.scp.common.registry.TileRegistry;
+import com.skythecodemaster.scp.common.registry.SoundRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.limit.Min;
+import com.skythecodemaster.scp.common.registry.BlockRegistry;
+import com.skythecodemaster.scp.common.registry.TileRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(SkySCPMod.MOD_ID)
@@ -37,6 +36,7 @@ public class SkySCPMod {
       TileRegistry.TILES.register(bus);
       BlockRegistry.BLOCKS.register(bus);
       ItemRegistry.ITEMS.register(bus);
+      SoundRegistry.SOUNDS.register(bus);
       scpTab = new CreativeModeTab(CreativeModeTab.getGroupCountSafe(), "skysscptab") {
         @Override
         public ItemStack makeIcon() {
@@ -44,7 +44,7 @@ public class SkySCPMod {
         }
       };
     }
-
+    
     // Register ourselves for server and other game events we are interested in
     MinecraftForge.EVENT_BUS.register(this);
   }
@@ -69,7 +69,9 @@ public class SkySCPMod {
     
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-      event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_ENTITY.get(), LightDoorOldRenderer::new);
+      event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_OLD_ENTITY.get(), LightDoorOldRenderer::new);
+      event.registerBlockEntityRenderer(TileRegistry.HEAVY_DOOR_OLD_ENTITY.get(), HeavyDoorOldRenderer::new);
+      //event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_NEW_ENTITY.get(), LightDoorNewRenderer::new);
     }
   }
 }

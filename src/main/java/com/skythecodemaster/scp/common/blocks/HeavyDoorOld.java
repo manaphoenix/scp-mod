@@ -22,7 +22,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class LightDoorOld extends DirectionalBlock implements EntityBlock {
+public class HeavyDoorOld extends DirectionalBlock implements EntityBlock {
   
   public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
   public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
@@ -32,7 +32,7 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
   private static final VoxelShape SHAPE_EAST = Shapes.box(0.375f, 0, 0, 0.625f, 2, 1);
   private static final VoxelShape SHAPE_WEST = SHAPE_EAST;
   
-  public LightDoorOld() {
+  public HeavyDoorOld() {
     super(Properties.of(Material.STONE).noOcclusion());
     this.stateDefinition.any().setValue(OPEN, false).setValue(POWERED, false);
   }
@@ -40,7 +40,7 @@ public class LightDoorOld extends DirectionalBlock implements EntityBlock {
   @Nullable
   @Override
   public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-    return TileRegistry.LIGHT_DOOR_OLD_ENTITY.get().create(pos, state);
+    return TileRegistry.HEAVY_DOOR_OLD_ENTITY.get().create(pos, state);
   }
   
   @Override
