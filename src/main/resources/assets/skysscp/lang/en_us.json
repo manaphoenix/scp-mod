@@ -1,11 +1,15 @@
 {
   "block.skysscp.scpenium_block": "SCPenium Block",
-  "block.skysscp.light_door_old": "Light Containment Door (Old)",
-  "block.skysscp.light_door_new": "Light Containment Door (New)",
+  "block.skysscp.light_door": "Light Containment Door",
+  "block.skysscp.light_door_new": "Light Containment Door (Broken)",
   "block.skysscp.heavy_door_old": "Heavy Containment Door (Old)",
   "block.skysscp.heavy_door_new": "Heavy Containment Door (New)",
   "block.skysscp.entrance_door": "Entrance Zone Door",
   "block.skysscp.heavy_gate": "Heavy Gate",
+
   "itemGroup.skysscptab": "Sky's SCPs",
-  "item.skysscp.scpenium": "SCPenium"
+  "item.skysscp.scpenium": "SCPenium",
+
+  "skysscp.subtitle.heavy_door_old_open": "Heavy Door (Old) opens",
+  "skysscp.subtitle.heavy_door_old_close": "Heavy Door (Old) closes"
 }

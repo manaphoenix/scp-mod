@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "skysscp:light_door_old"
+      "skysscp:light_door"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "skysscp:light_door_old"
+        "recipe": "skysscp:light_door"
       }
     }
   },

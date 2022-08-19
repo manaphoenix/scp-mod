@@ -1,0 +1,76 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"hdo.anim.open": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2,
+			"bones": {
+				"left": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2": {
+							"vector": [-12, 0, 0]
+						}
+					}
+				},
+				"right": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2": {
+							"vector": [7, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"hdo.anim.close": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2,
+			"bones": {
+				"left": {
+					"position": {
+						"0.0": {
+							"vector": [-12, 0, 0]
+						},
+						"2": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"right": {
+					"position": {
+						"0.0": {
+							"vector": [7, 0, 0]
+						},
+						"2": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"hdo.anim.idle_open": {
+			"loop": true,
+			"bones": {
+				"left": {
+					"position": {
+						"vector": [-12, 0, 0]
+					}
+				},
+				"right": {
+					"position": {
+						"vector": [7, 0, 0]
+					}
+				}
+			}
+		},
+		"hdo.anim.idle_close": {
+			"loop": true
+		}
+	},
+	"geckolib_format_version": 2
+}

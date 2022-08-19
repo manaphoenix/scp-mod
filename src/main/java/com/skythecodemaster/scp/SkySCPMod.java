@@ -3,6 +3,7 @@ package com.skythecodemaster.scp;
 import com.mojang.logging.LogUtils;
 import com.skythecodemaster.scp.client.renderers.*;
 import com.skythecodemaster.scp.common.registry.ItemRegistry;
+import com.skythecodemaster.scp.common.registry.SoundRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -35,6 +36,7 @@ public class SkySCPMod {
       TileRegistry.TILES.register(bus);
       BlockRegistry.BLOCKS.register(bus);
       ItemRegistry.ITEMS.register(bus);
+      SoundRegistry.SOUNDS.register(bus);
       scpTab = new CreativeModeTab(CreativeModeTab.getGroupCountSafe(), "skysscptab") {
         @Override
         public ItemStack makeIcon() {
@@ -68,7 +70,8 @@ public class SkySCPMod {
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
       event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_OLD_ENTITY.get(), LightDoorOldRenderer::new);
-      event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_NEW_ENTITY.get(), LightDoorNewRenderer::new);
+      event.registerBlockEntityRenderer(TileRegistry.HEAVY_DOOR_OLD_ENTITY.get(), HeavyDoorOldRenderer::new);
+      //event.registerBlockEntityRenderer(TileRegistry.LIGHT_DOOR_NEW_ENTITY.get(), LightDoorNewRenderer::new);
     }
   }
 }
