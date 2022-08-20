@@ -1,85 +1,76 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"hdo.anim.open": {
+		"ldo.anim.open": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 2,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
 			"bones": {
-				"left": {
+				"bone": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"2": {
-							"vector": [-12, 0, 0]
+						"0.5": {
+							"vector": [16, 0, 0]
 						}
 					}
 				},
-				"right": {
+				"bone2": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"2": {
-							"vector": [7, 0, 0]
+						"0.5": {
+							"vector": [-16, 0, 0]
 						}
 					}
 				}
-			},
-			"sound_effects": {
-				"0.0": {
-					"effect": "block"
-				}
 			}
 		},
-		"hdo.anim.close": {
+		"ldo.anim.close": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 2,
+			"animation_length": 0.5,
 			"bones": {
-				"left": {
+				"bone": {
 					"position": {
 						"0.0": {
-							"vector": [-12, 0, 0]
+							"vector": [16, 0, 0]
 						},
-						"2": {
+						"0.5": {
 							"vector": [0, 0, 0]
 						}
 					}
 				},
-				"right": {
+				"bone2": {
 					"position": {
 						"0.0": {
-							"vector": [7, 0, 0]
+							"vector": [-16, 0, 0]
 						},
-						"2": {
+						"0.5": {
 							"vector": [0, 0, 0]
 						}
 					}
 				}
-			},
-			"sound_effects": {
-				"0.0": {
-					"effect": "block"
-				}
 			}
 		},
-		"hdo.anim.idle_open": {
-			"loop": true,
+		"ldo.anim.idle_open": {
+			"loop": "hold_on_last_frame",
 			"bones": {
-				"left": {
+				"bone": {
 					"position": {
-						"vector": [-12, 0, 0]
+						"vector": [16, 0, 0]
 					}
 				},
-				"right": {
+				"bone2": {
 					"position": {
-						"vector": [7, 0, 0]
+						"vector": [-16, 0, 0]
 					}
 				}
 			}
 		},
-		"hdo.anim.idle_close": {
-			"loop": true
+		"ldo.anim.idle_close": {
+			"loop": "hold_on_last_frame"
 		}
 	},
 	"geckolib_format_version": 2
